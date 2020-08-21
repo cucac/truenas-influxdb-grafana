@@ -9,7 +9,7 @@ This is how to create your own customize TrueNAS dashboard using Grafana and inf
     ## Configuration
 
 ## Define your custom Ports, static local IP address, influxDb username and password.
-To make things easier to remmeber, we will decide on what port and static local IP address to use for this logging server. Depends on your network settings, yours might be different from this. If defaults is used, ensure it doesn't conflit with other system ports you might have. Also, if firewall is enable on the system, we have to make sure these ports are allowed to pass through.
+To make things easier to remmeber, we will decide on what port and static local IP address to use for this logging server. Depends on your network settings, yours might be different from this. If defaults are used, ensure it doesn't conflit with other system ports you might have. Also, if firewall is enable on the system, we have to make sure these ports are allowed to pass through.
 
 	Software        Port Number
 	Grafana         9800
@@ -29,6 +29,7 @@ Visit https://grafana.com/grafana/download to get instructions to install Grafan
 ### Choose your Configuration Options
 Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liking. In our case
 	
+	[server]
 	http_addr = 192.168.11.50
 	http_port = 9800
 
