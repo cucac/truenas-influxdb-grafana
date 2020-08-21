@@ -82,7 +82,7 @@ Visit this wbesite https://portal.influxdata.com/downloads/ and select InfluxDB 
 	$ sudo systemctl start influxdb
 	$ sudo systemctl --type=service --state=active | grep influxdb
 
-Visit https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/ for more info to create user, password and database to accpet TrueNAS output. While there get to know how to assign user priviledge to database. But before doing that we need to get into InfluxDB shell command by issuing this command where -host/-port are said at the beginning
+Visit https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/ for more info to create admin user and password to accpet TrueNAS output. While there get to know how to assign user priviledge to. But before doing that we need to get into InfluxDB shell command by issuing this command where -host/-port are mentioned at the beginning
 
     $ influx -host 192.168.11.35 -port 9600
     
@@ -120,6 +120,8 @@ We can also run a few queries to see if the data you are looking for is being po
 	1598032999000000000 truenas_local disktemp 38
 	1598033299000000000 truenas_local disktemp 38
 
+
+Now you can access Grafana and customize your own dashboard. Default username and password for Grafana is admin/admin. Once you log in you can change your own password for admin user.
 
 ##Future impoving:
 I am still learning thru the process how to pull time series data from TrueNAS and display it with Grafana. A lot to learn. Hope this little readme file helps you to create your own meaningfull TrueNAS dashboard. If you have questions please post on my YouTube video comment section.
