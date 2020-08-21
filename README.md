@@ -123,5 +123,5 @@ We can also run a few queries to see if the data you are looking for is being po
 
 Now you can access Grafana and customize your own dashboard. Default username and password for Grafana is admin/admin. Once you log in you can change your own password for admin user.
 
-##Future impoving:
+## Future impoving:
 I am still learning thru the process how to pull time series data from TrueNAS and display it with Grafana. A lot to learn. Hope this little readme file helps you to create your own meaningfull TrueNAS dashboard. If you have questions please post on my YouTube video comment section.
