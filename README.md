@@ -36,7 +36,7 @@ Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liki
 	$ sudo systemctl daemon-reload
 	$ sudo systemctl enable grafana-server
 	$ sudo systemctl start grafana-server
-	$ sudo systemctl --type=service --state=active | grep mongod    
+	$ sudo systemctl --type=service --state=active | grep grafana    
     
     
 ### InfluxDB Installation and Configurations
