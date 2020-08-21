@@ -22,7 +22,9 @@ For influxDb username and password, please use your own imagination to create us
 	password: admin_Password!
 
 ## Grafana Installation and Configurations
-Visit https://grafana.com/grafana/download to get instructions to install Grafana.
+Visit https://grafana.com/grafana/download to get instructions to install Grafana. But before Grafana installation, run this first
+
+	$ sudo apt update && sudo apt upgrade
 
 ### Choose your Configuration Options
 Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liking. In our case
