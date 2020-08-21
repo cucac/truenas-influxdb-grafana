@@ -84,7 +84,7 @@ Visit this wbesite https://portal.influxdata.com/downloads/ and select InfluxDB 
 
 Visit https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/ for more info to create admin user and password to accpet TrueNAS output. While there get to know how to assign user priviledge to. But before doing that we need to get into InfluxDB shell command by issuing this command where -host/-port are mentioned at the beginning
 
-    $ influx -host 192.168.11.35 -port 9600
+    $ influx -host 192.168.11.50 -port 9600
     
 Once everything is setup with admin user, we can now tell TrueNAS to output time series data to influxDB
 
