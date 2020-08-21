@@ -15,8 +15,8 @@ To make things easier to remmeber, we will decide on what port and static local 
 	Grafana         9800
 	InfluxDB        9600
 	
-Static local IP: 192.168.11.111 (this IP should be within the range of TrueNAS local IP address so that TrueNAS can communicate with this logging server)
-For influxDb username and password, please use your own imagination to create username and password here. I leave it here for reference purpose only.
+Assign static local IP 192.168.11.50 (this IP should be within the range of TrueNAS local IP address so that TrueNAS can communicate with this logging server)
+For influxDb username and password, please use your own imagination to create username and password here. I leave it here for reference purpose ONLY.
 
 	username: influx_admin
 	password: admin_Password!
@@ -27,7 +27,7 @@ Visit https://grafana.com/grafana/download to get instructions to install Grafan
 ### Choose your Configuration Options
 Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liking. In our case
 	
-	http_addr = 192.168.11.111
+	http_addr = 192.168.11.50
 	http_port = 9800
 
 #### Install common plug-ins for grafana
