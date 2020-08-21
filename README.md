@@ -26,7 +26,7 @@ Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liki
 	http_port = 9800
 
 #### Install common plug-ins for grafana
-    	$ sudo grafana-cli plugins install grafana-worldmap-panel
+	$ sudo grafana-cli plugins install grafana-worldmap-panel
 	$ sudo grafana-cli plugins install savantly-heatmap-panel
 	$ sudo grafana-cli plugins install grafana-piechart-panel
 	$ sudo grafana-cli plugins install grafana-clock-panel
