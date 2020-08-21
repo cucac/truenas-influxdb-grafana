@@ -4,7 +4,7 @@ This is how to create your own customize TrueNAS dashboard using Grafana and inf
 ## Running on
 
     Grafana 7.1.4
-    Influxdb 1.7.10
+    Influxdb 1.8.2
     
     ## Configuration
 
@@ -47,22 +47,48 @@ Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liki
     
     
 ### InfluxDB Installation and Configurations
+Visit this wbesite https://portal.influxdata.com/downloads/ and select InfluxDB version to install. At this point, we will determine graphite engpoint is enabled in InfluxDb by editing configuration file. Also we will activate the template for TrueNAS. Configuration file is located at /etc/influxdb/influxdb.conf 
+	
+	[http]
+	# Determines whether HTTP endpoint is enabled.
+    	enabled = true
+
+  	# The bind address used by the HTTP service.
+    	bind-address = "192.168.11.50:9600"
+	
+	# Determines whether user authentication is enabled over HTTP/HTTPS.
+    	auth-enabled = true
 
 
+	[[graphite]]
+  	# Determines whether the graphite endpoint is enabled.
+   		enabled = true
+   		database = "graphitedb"
+   		retention-policy = ""
+   		bind-address = ":2003"
+   		protocol = "tcp"
+   		consistency-level = "one"
+	
+	separator = "_"
 
-#### Telegraf Config
-    debug = true
-    quiet = false
-    logfile = "/var/log/telegraf/telegraf.log"
+	templates = [
+     		"*.app env.service.resource.measurement",
+     		"servers.* .host.resource.measurement*",
+  		#   # Default template
+  		#   "server.*",
+  	 ]
+			
+		
+#### Enable service, start influxdb, and double checking to see it's currently running.		
+	$ sudo systemctl enable influxdb.service
+	$ sudo systemctl start influxdb
+	$ sudo systemctl --type=service --state=active | grep influxdb
 
-#### Restarting Telegraf
-    # ps -aux | grep -i telegraf
-    # kill -HUP <pid of telegraf proces>
+Visit https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/ for more info to create user, password and database to accpet TrueNAS output. While there get to know how to assign user priviledge to database. But before doing that we need to get into InfluxDB shell command by issuing this command where -host/-port are said at the beginiing
 
-Now go read /var/log/telegraf/telegraf.log
+    $ influx -host 192.168.11.35 -port 9600
     
-### InfluxDB
-When in doubt, run a few queries to see if the data you are looking for is being populated.
+Once everything is setup, run a few queries to see if the data you are looking for is being populated.
 
     bash-4.4# influx
     Connected to http://localhost:8086 version 1.7.10
