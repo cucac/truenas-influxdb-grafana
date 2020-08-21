@@ -1,43 +1,43 @@
 # truenas-influxdb-grafana
+This is how to create your own customize TrueNAS dashboard using Grafana and influxDB
 
 # Running on
 
-    Grafana 6.7.2
+    Grafana 7.1.4
     Influxdb 1.7.10
     
     ## Configuration
 
-### Grafana
-The Config for the dashboard relies on the variables defined within the dashboard in Grafana.  When importing the dashboard, make sure to select your datasource. 
+### Define your custom Ports and static local IP address
+To make things easier to remmeber, we will decide on what port and static local IP address for this logging server. Yours maight be different from this. If defaults is used, ensure  it doesn't conflit with other system you might have running. 
+Software        Port Number
+Grafana         9800
+InfluxDB        9600
+Static local IP: 192.168.11.111 (this IP should be within the range of TrueNAS local IP address so that TrueNAS can communicate with this logging server)
 
-Dashboard Settings -> Variables
+### Grafana Installation and Configurations
+Visit https://grafana.com/grafana/download to get instructions to install Grafana.
 
-WAN - $WAN is a static variable defined so that a separate dashboard panel can be created for WAN interfaces stats.  Use a comma-separated list for multiple WAN interfaces.
+    ###Choose your Configuration Options
+    The Config for the dashboard relies on thevariables defined within the dashboard in Grafana. Edit /etc/grafana/grafana.ini file to your liking. In our case
+        	http_addr = 192.168.11.111
+			http_port = 9800
 
-LAN_Interfaces - $LAN_Interfaces uses a regex to remove any interfaces you don't want to be grouped as LAN. The filtering happens in the "Regex" field. I use a negative lookahead regex to match the interfaces I want excluded.  It should be pretty easy to understand what you need to do here. I have excluded igb0 (WAN) and igb1,igb2,igb3 (only used to host vlans).
-
-After writing this up, I realize I need to change this variable name, it's just not going to happen right now. 
-
-### Telegraf
-[Telegraf Config](config/additional_config.conf)
-
-In the [/config](config/additional_config.conf) directory you will find all of the additional telegraf config. In pfSense, under Services -> Telegraf, at the bottom of the page with the teeny tiny text box is where you paste in the included config.
-
-I also included the config for Unbound DNS and it's commented out.  I'm not currently using it, but it's fully functional, just uncomment if you want to use it.
-
-### Plugins
-[Plugins](plugins)
-
-I put all my plugins in /usr/local/bin and set them to 555
+#### Install common plug-ins for grafana
+    $ sudo grafana-cli plugins install grafana-worldmap-panel
+	$ sudo grafana-cli plugins install savantly-heatmap-panel
+	$ sudo grafana-cli plugins install grafana-piechart-panel
+	$ sudo grafana-cli plugins install grafana-clock-panel
+####
+	$ sudo systemctl daemon-reload
+	$ sudo systemctl enable grafana-server
+	$ sudo systemctl start grafana-server
+	$ sudo systemctl --type=service --state=active | grep mongod    
+    
+    
+### InfluxDB Installation and Configurations
 
 
-I also included a wrapper script for Unbound DNS.  I'm not currently using it, but it's fully functional.
-   
-## Troubleshooting
-
-### Telegraf Plugins
-
-To troubleshoot plugins, add the following lines to the agent block in /usr/local/etc/telegraf.conf and send a HUP to the telegraf pid. You're going to need to do this from a ssh shell. One you update the config you are going to need to tell telegraf to read the new configs. If you restart telegraf from pfSense, this will not work since it will overwrite your changes.
 
 #### Telegraf Config
     debug = true
