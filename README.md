@@ -9,7 +9,7 @@ This is how to create your own customize TrueNAS dashboard using Grafana and inf
     ## Configuration
 
 ## Define your custom Ports and static local IP address
-To make things easier to remmeber, we will decide on what port and static local IP address for this logging server. Yours maight be different from this. If defaults is used, ensure it doesn't conflit with other system ports you might have running. If firewall is enable on, we also have to make sure these ports are allow to pass through.
+To make things easier to remmeber, we will decide on what port and static local IP address to use for this logging server. Depends on your network settings, yours might be different from this. If defaults is used, ensure it doesn't conflit with other system ports you might have. Also, if firewall is enable on the system, we have to make sure these ports are allowed to pass through.
 
 	Software        Port Number
 	Grafana         9800
@@ -21,7 +21,7 @@ Static local IP: 192.168.11.111 (this IP should be within the range of TrueNAS l
 Visit https://grafana.com/grafana/download to get instructions to install Grafana.
 
 ###Choose your Configuration Options
-The Config for the dashboard relies on thevariables defined within the dashboard in Grafana. Edit /etc/grafana/grafana.ini file to your liking. In our case
+Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liking. In our case
 	http_addr = 192.168.11.111
 	http_port = 9800
 
