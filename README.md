@@ -1,34 +1,37 @@
 # truenas-influxdb-grafana
 This is how to create your own customize TrueNAS dashboard using Grafana and influxDB
 
-# Running on
+## Running on
 
     Grafana 7.1.4
     Influxdb 1.7.10
     
     ## Configuration
 
-### Define your custom Ports and static local IP address
-To make things easier to remmeber, we will decide on what port and static local IP address for this logging server. Yours maight be different from this. If defaults is used, ensure  it doesn't conflit with other system you might have running. 
-Software        Port Number
-Grafana         9800
-InfluxDB        9600
+## Define your custom Ports and static local IP address
+To make things easier to remmeber, we will decide on what port and static local IP address for this logging server. Yours maight be different from this. If defaults is used, ensure it doesn't conflit with other system ports you might have running. If firewall is enable on, we also have to make sure these ports are allow to pass through.
+
+	Software        Port Number
+	Grafana         9800
+	InfluxDB        9600
+	
 Static local IP: 192.168.11.111 (this IP should be within the range of TrueNAS local IP address so that TrueNAS can communicate with this logging server)
 
-### Grafana Installation and Configurations
+## Grafana Installation and Configurations
 Visit https://grafana.com/grafana/download to get instructions to install Grafana.
 
-    ###Choose your Configuration Options
-    The Config for the dashboard relies on thevariables defined within the dashboard in Grafana. Edit /etc/grafana/grafana.ini file to your liking. In our case
-        	http_addr = 192.168.11.111
-			http_port = 9800
+###Choose your Configuration Options
+The Config for the dashboard relies on thevariables defined within the dashboard in Grafana. Edit /etc/grafana/grafana.ini file to your liking. In our case
+	http_addr = 192.168.11.111
+	http_port = 9800
 
 #### Install common plug-ins for grafana
-    $ sudo grafana-cli plugins install grafana-worldmap-panel
+    	$ sudo grafana-cli plugins install grafana-worldmap-panel
 	$ sudo grafana-cli plugins install savantly-heatmap-panel
 	$ sudo grafana-cli plugins install grafana-piechart-panel
 	$ sudo grafana-cli plugins install grafana-clock-panel
-####
+	
+#### Enable service, start grafana-server, and double checking to see it's currently running.
 	$ sudo systemctl daemon-reload
 	$ sudo systemctl enable grafana-server
 	$ sudo systemctl start grafana-server
