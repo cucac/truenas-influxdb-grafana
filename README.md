@@ -19,7 +19,7 @@ Assign static local IP 192.168.11.50 (this IP should be within the range of True
 For influxDb username and password, please use your own imagination to create username and password here. I leave it here for reference purpose ONLY.
 
 	username: influx_admin
-	password: admin_Password!
+	password: admin_Password
 
 ## Grafana Installation and Configurations
 Visit https://grafana.com/grafana/download to get instructions to install Grafana. But before Grafana installation, run this first
@@ -91,7 +91,7 @@ Once everything is setup with admin user, we can now tell TrueNAS to output time
 
 We can also run a few queries to see if the data you are looking for is being populated.
 
-	$ influx -host 192.168.11.50 -port 9600 -username "influx_admin" -password "admin_Password!"
+	$ influx -host 192.168.11.50 -port 9600 -username "influx_admin" -password "admin_Password"
 	Connected to http://192.168.11.50:9600 version 1.8.2
 	InfluxDB shell version: 1.8.2
 	> SHOW DATABASES
