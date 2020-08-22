@@ -1,5 +1,5 @@
 # truenas-influxdb-grafana
-This is how to create your own customize TrueNAS dashboard using Grafana and influxDb time series database. To view how to do it step by step, you can visit my YouTube channel for this custom TrueNAS dashboard 
+This is how to create your own customize TrueNAS dashboard using Grafana and influxDb time series database. To view how to do it step by step, you can visit my YouTube channel https://youtu.be/xN47J-Tp2oU for this custom TrueNAS dashboard 
 
 ## Running on
 
