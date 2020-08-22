@@ -1,6 +1,8 @@
 # truenas-influxdb-grafana
 This is how to create your own customized TrueNAS dashboard using Grafana and influxDb time series database. To view how to do it step by step, you can visit my YouTube channel https://www.youtube.com/watch?v=xN47J-Tp2oU for this custom TrueNAS dashboard 
 
+![Image of custom TrueNAS dashboard on Samsung tablet](https://github.com/cucac/truenas-influxdb-grafana/blob/master/custom_TrueNAS_dahsboard.jpg)
+
 ## Running on
 
     Grafana 7.1.4
