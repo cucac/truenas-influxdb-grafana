@@ -86,7 +86,7 @@ Visit https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/ for mo
     
 Once everything is setup with admin user, we now can tell TrueNAS to output time series data to influxDB
 
-![TrueNAS remote graphite server](/truenas graphite setting.JPG)
+![Image of TrueNAS remote graphite server](https://octodex.github.com/images/yaktocat.png)
 
 We can also run a few queries to see if the data you are looking for is being populated.
 
