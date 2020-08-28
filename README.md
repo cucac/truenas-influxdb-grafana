@@ -71,7 +71,7 @@ Visit this wbesite https://portal.influxdata.com/downloads/ and select InfluxDB 
 
 	templates = [
      		"*.app env.service.resource.measurement",
-     		"servers.* .host.resource.measurement*",
+     		"servers.* .host.resource.measurement.field*",
   		#   # Default template
   		#   "server.*",
   	 ]
@@ -107,11 +107,24 @@ We can also run a few queries to see if the data you are looking for is being po
 	name: measurements
 	name
 	----
+	0
+	1
 	.
 	.
-	da1.temperature
+	.
+	da1
 	.
 	.
+	.
+	
+	ps_state
+	queue_length
+	root
+	server
+	swap
+	tpc
+	uptime
+	vmx0
 
 	> SELECT * FROM "da1.temperature"
 	name: da1.temperature
