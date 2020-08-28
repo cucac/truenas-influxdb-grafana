@@ -107,16 +107,11 @@ We can also run a few queries to see if the data you are looking for is being po
 	name: measurements
 	name
 	----
-	0
-	1
-	.
 	.
 	.
 	da1
 	.
 	.
-	.
-	
 	ps_state
 	queue_length
 	root
@@ -125,14 +120,22 @@ We can also run a few queries to see if the data you are looking for is being po
 	tpc
 	uptime
 	vmx0
+	> SELECT ("temperature") FROM "da1" WHERE ("resource" = 'disktemp')
+	name: da1
+	time                temperature
+	----                -----------
+	1598644999000000000 37
+	1598645299000000000 37
+	1598645588000000000 37
+	1598645888000000000 37
+	1598646188000000000 37
+	1598646488000000000 37
+	1598646788000000000 38
+	1598647088000000000 38
+	1598647388000000000 38
+	1598647688000000000 38
+	>
 
-	> SELECT * FROM "da1.temperature"
-	name: da1.temperature
-	time                host          resource value
-	----                ----          -------- -----
-	1598032699000000000 truenas_local disktemp 38
-	1598032999000000000 truenas_local disktemp 38
-	1598033299000000000 truenas_local disktemp 38
 
 
 Now you can access Grafana and customize your own TrueNAS dashboard. 
