@@ -138,8 +138,8 @@ We can also run a few queries to see if the data you are looking for is being po
 
 
 
-Now you can access Grafana and customize your own TrueNAS dashboard. 
+Now you can access Grafana and customize your own TrueNAS dashboard. Hope this little README.md file helps you to create your own meaningful TrueNAS dashboard. If you have any questions please post it on my YouTube channel video comment section https://www.youtube.com/watch?v=xN47J-Tp2oU
 
 ![Image of customized TrueNAS dashboard](https://github.com/cucac/truenas-influxdb-grafana/raw/master/TrueNAS-dashboard_small.jpg)
 
-Hope this little README.md file helps you to create your own meaningful TrueNAS dashboard. If you have any questions please post it on my YouTube channel video comment section https://www.youtube.com/watch?v=xN47J-Tp2oU
+
