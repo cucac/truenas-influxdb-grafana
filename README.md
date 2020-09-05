@@ -52,7 +52,7 @@ Edit Grafana configuration file located at /etc/grafana/grafana.ini to your liki
 	$ sudo systemctl --type=service --state=active | grep grafana    
     
     
-### InfluxDB Installation and Configurations
+## InfluxDB Installation and Configurations
 Visit this wbesite https://portal.influxdata.com/downloads/ and select InfluxDB version to install. At this point, we will determine graphite endpoint is enabled in InfluxDb setting by editing configuration file. Also, we will modify the its template for TrueNAS. Configuration file is located at /etc/influxdb/influxdb.conf 
 	
 	[http]
