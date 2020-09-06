@@ -3,7 +3,7 @@ Do you want to customize TrueNAS dashboard? Do you want to setup your own custom
 
 Part 1: https://www.youtube.com/watch?v=xN47J-Tp2oU (setting up logging server system)  
 Part 2: https://www.youtube.com/watch?v=G7Y69_w_N-c (setting up Current Disk Temperature panel)  
-Part 3: (correctly report storage pool useage with multiple dataset)
+Part 3: https://youtu.be/2jSwrok3tSY (setting up report storage pool usage correctly with multiple dataset)
 
 
 
