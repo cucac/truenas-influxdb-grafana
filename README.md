@@ -1,9 +1,9 @@
 # Customize TrueNAS dashboard with Grafana and influxDB
 Do you want to customize TrueNAS dashboard? Do you want to setup your own customized TrueNAS dashboard on any tablet? This readme is to show you how to create your own customized TrueNAS dashboard using Grafana and influxDb time series database. You can also view step-by-step instructions video on my YouTube channel which is divided into 3 parts.
 
-Part 1: https://www.youtube.com/watch?v=xN47J-Tp2oU (setting up logging server system)  
-Part 2: https://www.youtube.com/watch?v=G7Y69_w_N-c (setting up Current Disk Temperature panel)  
-Part 3: https://youtu.be/2jSwrok3tSY (setting up report storage pool usage correctly with multiple dataset)
+Part 1: https://youtu.be/xN47J-Tp2oU (setting up logging server system)  
+Part 2: https://youtu.be/G7Y69_w_N-c (setting up Current Disk Temperature panel)  
+Part 3: https://youtu.be/2jSwrok3tSY (setting up report storage pool usage correctly with multiple datasets)
 
 
 
